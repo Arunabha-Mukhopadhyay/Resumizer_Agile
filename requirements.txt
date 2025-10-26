@@ -1,0 +1,25 @@
+# ============ API Framework ============
+fastapi==0.119.1
+uvicorn==0.38.0
+
+# ============ Langchain Ecosystem ============
+langchain==0.1.17
+langchain-core==0.1.52     # ✅ COMPATIBLE VERSION — fixes conflict
+langchain-community==0.0.38
+langchain-experimental==0.0.33
+langchain-google-genai==0.0.6
+faiss-cpu==1.12.0
+
+# ============ Resume Parsing ============
+python-docx
+pdfplumber
+pypdf
+python-dotenv
+python-multipart
+
+# ============ AI + Utils ============
+openai
+loguru
+pandas
+unstructured
+sentence-transformers

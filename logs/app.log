@@ -1,0 +1,129 @@
+2025-10-23 20:23:30.377 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 20:23:35.545 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit.
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+]
+2025-10-23 20:30:22.292 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 20:30:27.406 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit.
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+]
+2025-10-23 20:41:00.336 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 20:41:05.634 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit.
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+]
+2025-10-23 20:47:01.685 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 20:47:06.750 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Error embedding content: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit.
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0
+* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 0 [violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerMinutePerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerUserPerProjectPerModel-FreeTier"
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/embed_content_free_tier_requests"
+  quota_id: "EmbedContentRequestsPerDayPerProjectPerModel-FreeTier"
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+]
+2025-10-23 20:48:54.150 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 20:49:39.495 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: SystemMessages are not yet supported!
+
+To automatically convert the leading SystemMessage to a HumanMessage,
+set  `convert_system_message_to_human` to True. Example:
+
+llm = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True)
+
+2025-10-23 20:52:15.728 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 21:59:01.910 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 22:04:24.293 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 22:07:34.697 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-23 22:13:03.520 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-23 22:21:51.720 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 18:07:14.045 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 18:31:26.444 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 18:31:39.917 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 19:28:50.022 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 19:28:58.613 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: model 'llama3' not found (status code: 404)
+2025-10-26 19:48:01.036 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 19:48:08.711 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: model 'mistral' not found (status code: 404)
+2025-10-26 19:55:06.680 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 19:56:11.379 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 20:00:29.350 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-26 20:30:53.532 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
