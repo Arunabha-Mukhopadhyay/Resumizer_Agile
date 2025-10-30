@@ -127,3 +127,18 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human
 2025-10-26 19:56:11.379 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
 2025-10-26 20:00:29.350 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
 2025-10-26 20:30:53.532 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-27 13:50:10.835 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-27 13:52:06.241 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:08:09.069 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:08:09.343 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Failed to generate vector store with local embeddings.
+2025-10-30 23:10:35.404 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:10:35.625 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Failed to generate vector store with local embeddings.
+2025-10-30 23:10:52.365 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:10:52.469 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Failed to generate vector store with local embeddings.
+2025-10-30 23:11:26.047 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:11:26.149 | INFO     | monitor:log_event:9 - [ERROR] Processing failed: Failed to generate vector store with local embeddings.
+2025-10-30 23:12:18.442 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:12:41.762 | INFO     | monitor:log_event:9 - [QUESTION] 8b934a86-b0e4-48b8-91ca-12348ffce0de: Summarize this resume in one sentence.
+2025-10-30 23:18:26.419 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:19:17.782 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-10-30 23:20:33.155 | INFO     | monitor:log_event:9 - [QUESTION] ca68d6f0-b2d4-4a55-8412-e6eca87ced4e: what more things to add

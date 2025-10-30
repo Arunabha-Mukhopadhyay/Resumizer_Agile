@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumizer AI</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(145deg, #f5f7fa 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 16px;
+        }
+
+        .card {
+            width: min(900px, 100%);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+            padding: 32px;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #1f2937;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #4b5563;
+            margin-top: 0.5rem;
+        }
+
+        .upload-area {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+            padding: 24px;
+            border: 2px dashed #93c5fd;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+        }
+
+        button {
+            align-self: flex-start;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .status {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #2563eb;
+        }
+
+        .error {
+            color: #dc2626;
+        }
+
+        .analysis-item {
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 10px;
+            background: #e0f2fe;
+            color: #0f172a;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 110px;
+            border-radius: 12px;
+            border: 1px solid #cbd5f5;
+            padding: 12px;
+            font-size: 1rem;
+            resize: vertical;
+            background: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .qa-section {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .chat-entry {
+            margin-top: 18px;
+            padding: 16px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .chat-entry strong {
+            display: block;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+
+            textarea {
+                min-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1>Resumizer AI</h1>
+        <p>Upload a resume and explore it with AI-powered questions.</p>
+
+        <form id="upload-form" class="upload-area">
+            <label for="resume">Select a resume file (.pdf or .docx)</label>
+            <input type="file" id="resume" accept=".pdf,.docx" required />
+            <button type="submit">Upload &amp; Analyze</button>
+            <div id="upload-status" class="status"></div>
+        </form>
+
+        <section id="analysis-section" class="hidden">
+            <h2>Automatic Insights</h2>
+            <div id="analysis-results"></div>
+        </section>
+
+        <section id="qa-section" class="qa-section hidden">
+            <h2>Ask Follow-up Questions</h2>
+            <textarea id="question-input" placeholder="Ask anything about the uploaded resume..."></textarea>
+            <button id="ask-btn" type="button">Ask Question</button>
+            <div id="qa-status" class="status"></div>
+            <div id="chat-history"></div>
+        </section>
+    </main>
+
+    <script>
+        const uploadForm = document.getElementById("upload-form");
+        const resumeInput = document.getElementById("resume");
+        const uploadStatus = document.getElementById("upload-status");
+        const analysisSection = document.getElementById("analysis-section");
+        const analysisResults = document.getElementById("analysis-results");
+        const qaSection = document.getElementById("qa-section");
+        const questionInput = document.getElementById("question-input");
+        const askBtn = document.getElementById("ask-btn");
+        const qaStatus = document.getElementById("qa-status");
+        const chatHistory = document.getElementById("chat-history");
+
+        let resumeId = null;
+
+        uploadForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const file = resumeInput.files[0];
+            if (!file) {
+                uploadStatus.textContent = "Please choose a resume file first.";
+                uploadStatus.classList.add("error");
+                return;
+            }
+
+            uploadStatus.textContent = "Uploading & analyzing resume...";
+            uploadStatus.classList.remove("error");
+            qaStatus.textContent = "";
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || "Upload failed.");
+                }
+
+                resumeId = data.resume_id;
+                uploadStatus.textContent = `✅ Resume uploaded: ${data.filename}`;
+
+                renderAnalysis(data.analysis);
+
+                qaSection.classList.remove("hidden");
+                questionInput.focus();
+            } catch (error) {
+                console.error(error);
+                uploadStatus.textContent = error.message || "Something went wrong.";
+                uploadStatus.classList.add("error");
+                qaSection.classList.add("hidden");
+            }
+        });
+
+        askBtn.addEventListener("click", async () => {
+            const question = questionInput.value.trim();
+
+            if (!resumeId) {
+                qaStatus.textContent = "Please upload a resume first.";
+                qaStatus.classList.add("error");
+                return;
+            }
+
+            if (!question) {
+                qaStatus.textContent = "Type a question to continue.";
+                qaStatus.classList.add("error");
+                return;
+            }
+
+            qaStatus.textContent = "Thinking...";
+            qaStatus.classList.remove("error");
+
+            try {
+                const response = await fetch("/ask", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ resume_id: resumeId, question })
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.detail || data.error || "Unable to get answer.");
+                }
+
+                addChatEntry(question, data.answer, data.model);
+                questionInput.value = "";
+                questionInput.focus();
+                qaStatus.textContent = "";
+            } catch (error) {
+                console.error(error);
+                qaStatus.textContent = error.message || "Something went wrong.";
+                qaStatus.classList.add("error");
+            }
+        });
+
+        function renderAnalysis(analysis = {}) {
+            if (!analysis || Object.keys(analysis).length === 0) {
+                analysisSection.classList.add("hidden");
+                analysisResults.innerHTML = "";
+                return;
+            }
+
+            analysisSection.classList.remove("hidden");
+            analysisResults.innerHTML = "";
+
+            Object.entries(analysis).forEach(([question, answer]) => {
+                const div = document.createElement("div");
+                div.className = "analysis-item";
+
+                const q = document.createElement("strong");
+                q.textContent = question;
+
+                const a = document.createElement("p");
+                a.textContent = answer;
+
+                div.appendChild(q);
+                div.appendChild(a);
+                analysisResults.appendChild(div);
+            });
+        }
+
+        function addChatEntry(question, answer, model) {
+            const container = document.createElement("div");
+            container.className = "chat-entry";
+
+            const questionEl = document.createElement("strong");
+            questionEl.textContent = `You: ${question}`;
+
+            const answerEl = document.createElement("p");
+            answerEl.textContent = answer;
+
+            const modelEl = document.createElement("small");
+            modelEl.textContent = model ? `Response from model: ${model}` : "";
+            modelEl.style.display = model ? "block" : "none";
+            modelEl.style.marginTop = "10px";
+            modelEl.style.color = "#64748b";
+
+            container.appendChild(questionEl);
+            container.appendChild(answerEl);
+            container.appendChild(modelEl);
+            chatHistory.prepend(container);
+        }
+    </script>
+</body>
+</html>
