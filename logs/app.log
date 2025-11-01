@@ -142,3 +142,6 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human
 2025-10-30 23:18:26.419 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
 2025-10-30 23:19:17.782 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
 2025-10-30 23:20:33.155 | INFO     | monitor:log_event:9 - [QUESTION] ca68d6f0-b2d4-4a55-8412-e6eca87ced4e: what more things to add
+2025-11-01 11:45:57.255 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
+2025-11-01 11:46:54.920 | INFO     | monitor:log_event:9 - [QUESTION] ad796b2f-0fb1-4063-a164-feb0b3ced4c6: what is my name
+2025-11-01 12:42:03.212 | INFO     | monitor:log_event:9 - [UPLOAD] Resume2.pdf uploaded
